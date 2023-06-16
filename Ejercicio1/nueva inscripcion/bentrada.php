@@ -11,7 +11,7 @@
   while($fila = mysqli_fetch_array($resultado)){
     $maximonumero = intval($fila["maxi"])+1;
   }
-
+//1inicial 2datos 3envio 4revision 5no 6si 7 inscripcion
   $sql="select * from flujotramite ";
   $sql.="where usuario='".$usuario."' and fechafin is null ";
   $resultado=mysqli_query($con, $sql);
