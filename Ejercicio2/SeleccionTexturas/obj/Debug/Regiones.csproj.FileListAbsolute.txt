@@ -28,3 +28,12 @@ C:\xampp\htdocs\ExamenSegundoParcial\Ejercicio3\Regiones\obj\Debug\Regiones.cspr
 C:\xampp\htdocs\ExamenSegundoParcial\Ejercicio3\Regiones\obj\Debug\Regiones.csproj.CoreCompileInputs.cache
 C:\xampp\htdocs\ExamenSegundoParcial\Ejercicio3\Regiones\obj\Debug\Regiones.exe
 C:\xampp\htdocs\ExamenSegundoParcial\Ejercicio3\Regiones\obj\Debug\Regiones.pdb
+C:\xampp\htdocs\324ExamenFinal\Ejercicio2\SeleccionTexturas\bin\Debug\Regiones.exe.config
+C:\xampp\htdocs\324ExamenFinal\Ejercicio2\SeleccionTexturas\bin\Debug\Regiones.exe
+C:\xampp\htdocs\324ExamenFinal\Ejercicio2\SeleccionTexturas\bin\Debug\Regiones.pdb
+C:\xampp\htdocs\324ExamenFinal\Ejercicio2\SeleccionTexturas\obj\Debug\Regiones.csprojResolveAssemblyReference.cache
+C:\xampp\htdocs\324ExamenFinal\Ejercicio2\SeleccionTexturas\obj\Debug\Regiones.Form1.resources
+C:\xampp\htdocs\324ExamenFinal\Ejercicio2\SeleccionTexturas\obj\Debug\Regiones.Properties.Resources.resources
+C:\xampp\htdocs\324ExamenFinal\Ejercicio2\SeleccionTexturas\obj\Debug\Regiones.csproj.GenerateResource.Cache
+C:\xampp\htdocs\324ExamenFinal\Ejercicio2\SeleccionTexturas\obj\Debug\Regiones.exe
+C:\xampp\htdocs\324ExamenFinal\Ejercicio2\SeleccionTexturas\obj\Debug\Regiones.pdb
