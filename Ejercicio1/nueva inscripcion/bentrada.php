@@ -4,6 +4,14 @@
       session_start(); 
   } 
   $usuario = $_SESSION["usuario"];
+
+
+  $sql = "SELECT max(nro_tramite) as 'maxi' FROM flujotramite";
+  $resultado=mysqli_query($con, $sql);
+  while($fila = mysqli_fetch_array($resultado)){
+    $maximonumero = intval($fila["maxi"])+1;
+  }
+
   $sql="select * from flujotramite ";
   $sql.="where usuario='".$usuario."' and fechafin is null ";
   $resultado=mysqli_query($con, $sql);
@@ -177,6 +185,25 @@
                   <form action="index.php">
                     <button class="btn btn-secondary d-grid w-20" type="submit" value="Volver" name = "Volver">Cerrar Sesión</button>
                   </form>
+                   <?php
+                    $descipcion ="";
+                    $sql = "SELECT DISTINCT r.descipcion from usuario u, rol r, rolusuario ru where u.id = ru.IdUsuario and ru.IdRol = r.id and u.descripcion like '$usuario'";
+                    $resultado=mysqli_query($con, $sql);
+                    while($fila = mysqli_fetch_array($resultado)){
+                      $descipcion = $fila["descipcion"];
+                    }
+                    if($descipcion == "Alumno"){
+                      
+                      echo "<form action='insertar.php' method='post'>";
+                      echo "<input type='hidden' name='flujo' value='F1'>";
+                      echo "<input type='hidden' name='proceso' value='P1'>";
+                      echo "<input type='hidden' name='usuario' value='$usuario'>";
+                      echo "<input type='hidden' name='maximonumero' value='$maximonumero'>";
+                      echo "<button class='btn btn-primary' type='submit'>Agregar Registro</button>";
+                      echo "</form>";
+                  
+                    }
+                  ?>
                 </div>
               </div>
               
