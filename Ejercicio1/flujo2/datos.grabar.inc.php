@@ -126,7 +126,6 @@ if($estado_valido == 1){
 
 }
 
-
 $sql="UPDATE academico2p.alumno ";
 $sql.="SET nombrecompleto='".$nombrecompleto."', ";
 $sql.="coddepto='".$coddepto."', ";

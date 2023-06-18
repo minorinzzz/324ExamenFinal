@@ -19,18 +19,26 @@ $ci = $filafi["ci"];
 
 // echo $id;
 
+$cartadecano = "";
+$cedulaidentidad ="";
+$certificadocalficaciones = "";
+$solicitudconclusionestudios = "";
+$caratulatrabajogrado = "";
+$resolucionperfilgrado = "";
+
+
 // necesitamos obtener los datos para la certificacion
 $sql = "select * from academico2p.certificado_conclusion ";
 $sql.= " where id='".$id."' ";
 $resultadocert = mysqli_query($con, $sql);
-$filacert = mysqli_fetch_array($resultadocert);
-$cartadecano = $filacert['cartadecano'];
-$cedulaidentidad = $filacert['cedulaidentidad'];
-$certificadocalficaciones = $filacert['certificadocalficaciones'];
-$solicitudconclusionestudios = $filacert['solicitudconclusionestudios'];
-$caratulatrabajogrado = $filacert['caratulatrabajogrado'];
-$resolucionperfilgrado = $filacert['resolucionperfilgrado'];
-
+while($filacert = mysqli_fetch_array($resultadocert)){
+    $cartadecano = $filacert['cartadecano'];
+    $cedulaidentidad = $filacert['cedulaidentidad'];
+    $certificadocalficaciones = $filacert['certificadocalficaciones'];
+    $solicitudconclusionestudios = $filacert['solicitudconclusionestudios'];
+    $caratulatrabajogrado = $filacert['caratulatrabajogrado'];
+    $resolucionperfilgrado = $filacert['resolucionperfilgrado'];
+}
 
 
 ?>

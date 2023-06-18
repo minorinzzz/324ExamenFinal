@@ -132,28 +132,33 @@ echo "hay  que encontrar otro rol";
 // hay que buscar al otro usuario en este caso kardex
 $rol_tarea = $fila['rol'];
 // buscando el id de $fila['rol'] en rol
-$sql="select * from rol ";
-$sql.=" where descipcion='".$rol_tarea."' ";
-$result1=mysqli_query($con, $sql);
-$fila1 = mysqli_fetch_array($result1);
+if($rol_tarea != "Alumno")
+{
+	$sql="select * from rol ";
+	$sql.=" where descipcion='".$rol_tarea."' ";
+	$result1=mysqli_query($con, $sql);
+	$fila1 = mysqli_fetch_array($result1);
 
-$id_rol = $fila1['id'];
-echo "id rol ".$id_rol. "<br/>";
-// ahora hay que buscar que usuario puede hacer esa tarea en rolusuario
-$sql3="select * from rolusuario ";
-$sql3.=" where IdRol='".$id_rol."' ";
-$resultadofi3=mysqli_query($con, $sql3);
-$filafi3 = mysqli_fetch_array($resultadofi3);
+	$id_rol = $fila1['id'];
+	echo "id rol ".$id_rol. "<br/>";
+	// ahora hay que buscar que usuario puede hacer esa tarea en rolusuario
+	$sql3="select * from rolusuario ";
+	$sql3.=" where IdRol='".$id_rol."' ";
+	$resultadofi3=mysqli_query($con, $sql3);
+	$filafi3 = mysqli_fetch_array($resultadofi3);
 
-$id_usuario_tarea = $filafi3['IdUsuario'];
+	$id_usuario_tarea = $filafi3['IdUsuario'];
 
-echo "id usuario siguiente tarea ".$id_usuario_tarea. "<br/>";
-$sql4="select * from usuario ";
-$sql4.=" where id='".$id_usuario_tarea."' ";
-$resultado4=mysqli_query($con, $sql4);
-$fila4 = mysqli_fetch_array($resultado4);
-$usuario_a_realizar_sig_tarea = $fila4['descripcion'];
-
+	echo "id usuario siguiente tarea ".$id_usuario_tarea. "<br/>";
+	$sql4="select * from usuario ";
+	$sql4.=" where id='".$id_usuario_tarea."' ";
+	$resultado4=mysqli_query($con, $sql4);
+	$fila4 = mysqli_fetch_array($resultado4);
+	$usuario_a_realizar_sig_tarea = $fila4['descripcion'];
+}
+else{
+	$usuario_a_realizar_sig_tarea = $usuario_anterior;
+}
 	// ahora ubiacmos al kardista
 
 

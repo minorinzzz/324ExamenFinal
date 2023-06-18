@@ -4,38 +4,13 @@
 
 
 $usuario_sesion = $_GET['usuario'];
-
-// buscando quien es el unico usuario en el sistem
-$sql = "select * from rol where descipcion='Alumno'";
-$res = mysqli_query($con, $sql);
-$fil = mysqli_fetch_array($res);
-
-// ahora en rolusuario buscar al codUsuario
-$sql = "select * from rolusuario where IdRol='".$fil['id']."'";
-$res = mysqli_query($con, $sql);
-$fil = mysqli_fetch_array($res);
-
-// print_r($fil);
-// ahora si buscando el handle del usuario
-$sql = "select * from usuario where id='".$fil['IdUsuario']."'";
-$res = mysqli_query($con, $sql);
-$fil = mysqli_fetch_array($res);
-// print_r($fil);
-$usuario_en_el_sistema =  $fil['descripcion']; // es unico
-$codigo = $fil['id'];
-
-// halando las materais
-$sql="SELECT * FROM academico2p.notas ";
-$sql.="WHERE id_usuario='$codigo'";
-$resultadomaterias = mysqli_query($con, $sql);
-
-// echo $codigo;
-
 // include "conexion.inc.php";
 $user_que_entro = $_GET['usuario'];
 $flujo = $_GET["flujo"];
 $proceso = $_GET["proceso"];
 $nro_tramite = $_GET["nro_tramite"];
+
+
 
 // echo $flujo;
 // echo $proceso;
@@ -50,6 +25,34 @@ $filafi=mysqli_fetch_array($result);
 
 
 $del_que_tiene_que_hacer = $filafi['usuario_tarea'];
+
+
+// buscando quien es el unico usuario en el sistem
+$sql = "select * from rol where descipcion='Alumno'";
+$res = mysqli_query($con, $sql);
+$fil = mysqli_fetch_array($res);
+
+// ahora en rolusuario buscar al codUsuario
+$sql = "select * from rolusuario where IdRol='".$fil['id']."'";
+$res = mysqli_query($con, $sql);
+$fil = mysqli_fetch_array($res);
+
+// print_r($fil);
+// ahora si buscando el handle del usuario
+$sql = "select * from usuario where descripcion='".$del_que_tiene_que_hacer."'";
+$res = mysqli_query($con, $sql);
+$fil = mysqli_fetch_array($res);
+// print_r($fil);
+$usuario_en_el_sistema =  $fil['descripcion']; // es unico
+$codigo = $fil['id'];
+
+// halando las materais
+$sql="SELECT * FROM academico2p.notas ";
+$sql.="WHERE id_usuario='$codigo'";
+$resultadomaterias = mysqli_query($con, $sql);
+
+// echo $codigo;
+
 
 // echo $del_que_tiene_que_hacer;
 

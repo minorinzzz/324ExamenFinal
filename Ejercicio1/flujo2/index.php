@@ -1,5 +1,9 @@
 
-<?php ?>
+<?php 
+ if(isset($_SESSION)){ // si no ha iniciado sesion 
+      session_destroy(); 
+  } 
+?>
 <!DOCTYPE html>
 <html>
   <head>
